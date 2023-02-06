@@ -1,0 +1,138 @@
+.header {
+  &__logo {
+    margin-right: auto;
+  }
+
+  &__nav {
+    font-size: $paragraph;
+    font-weight: 400;
+
+    a,
+    a:active {
+      text-decoration: none;
+      display: inline-block;
+      color: var(--dark-grayish-blue);
+      padding-right: 2.8rem; // I should select here all but last child !!!
+    }
+    a:hover {
+      color: var(--soft-red);
+    }
+
+    li {
+      display: inline-block;
+    }
+
+    @media screen and (max-width: 600px) {
+      display: none;
+    }
+  }
+}
+
+.main {
+  &__title {
+    max-width: 85%;
+    font-size: 6rem;
+    font-weight: 800;
+    line-height: 58px;
+    padding-top: 2rem;
+  }
+  &__paragraph {
+    font-size: $paragraph;
+    font-weight: 400;
+    color: var(--dark-grayish-blue);
+    line-height: $p-line-height;
+    padding: 2rem 0;
+  }
+}
+
+.side-nav {
+  background-color: var(--very-dark-blue);
+
+  &__title {
+    color: var(--soft-orange);
+    font-size: 3rem;
+    padding: 20px 15px;
+    margin-bottom: 2rem;
+
+    @media screen and (max-width: 1024px) {
+      margin-bottom: 1.5rem;
+    }
+    @media screen and (max-width: 900px) {
+      font-size: 4rem;
+      padding: 15px 10px;
+      text-align: center;
+    }
+    @media screen and (max-width: 600px) {
+      text-align: left;
+      padding: 10px 20px;
+    }
+  }
+  &__box {
+    padding-left: 2rem;
+    @media screen and (max-width: 900px) {
+      padding-left: 3rem;
+      text-align: center;
+      padding-bottom: 3rem;
+    }
+    @media screen and (max-width: 600px) {
+      text-align: left;
+    }
+  }
+  &__links {
+    text-decoration: none;
+    font-size: $paragraph;
+    color: var(--off-white);
+    @media screen and (max-width: 900px) {
+      font-size: 2rem;
+    }
+  }
+  &__links:hover {
+    color: var(--soft-orange);
+  }
+
+  &__link-descr {
+    color: var(--dark-grayish-blue);
+    font-size: $paragraph;
+    padding-top: 2rem;
+    max-width: 90%;
+    line-height: $p-line-height;
+    @media screen and (max-width: 900px) {
+      max-width: 100%;
+    }
+  }
+}
+
+.bottom {
+  &__img {
+    max-width: 28%;
+    @media screen and (max-width: 1600px) {
+      max-width: 35%;
+    }
+    @media screen and (max-width: 600px) {
+      max-width: 24%;
+    }
+  }
+  &__title {
+    &--number {
+      display: block;
+      font-size: 3rem;
+      font-weight: 700;
+      color: var(--grayish-blue);
+      padding-bottom: 1rem;
+    }
+    &--link {
+      display: inline-block;
+      text-decoration: none;
+      color: var(--very-dark-blue);
+      font-size: 1.8rem;
+      font-weight: 800;
+      padding-bottom: 1rem;
+    }
+  }
+  &__p {
+    font-size: $paragraph;
+    color: var(--dark-grayish-blue);
+    line-height: $p-line-height;
+    // max-width: 100%;
+  }
+}

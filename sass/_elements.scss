@@ -1,0 +1,94 @@
+//Hamburger menu
+
+.hamburger {
+  &__icon {
+    display: inline-block;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    display: none;
+    @media screen and (max-width: 600px) {
+      display: inline-block;
+    }
+    input {
+      // display: none;
+    }
+    // Hamburger Icon lines
+    &--bar,
+    &--bar::after,
+    &--bar::before {
+      display: inline-block;
+      width: 55px;
+      height: 4.5px;
+      background-color: var(--very-dark-blue);
+      transition: all 0.5s ease-out;
+    }
+    &--bar::before {
+      content: "";
+      position: absolute;
+      transform: translateY(-8px);
+    }
+    &--bar::after {
+      content: "";
+      position: absolute;
+      transform: translateY(8px);
+    }
+  }
+
+  // Hamburger Lines when checkbox checked
+
+  &__window {
+    display: none;
+    //prozor u kome su linkovi
+    // Mora biti display:none a kad je input[type=checkbox]:checked da se promeni na display: inline-block;
+    width: 60vw;
+    max-height: 100%;
+    background-color: aqua;
+  }
+
+  &__nav {
+    display: flex;
+    justify-content: start;
+    font-size: 5rem;
+
+    a {
+      text-decoration: none;
+    }
+    li {
+      list-style-type: none;
+      padding: 3rem 3rem;
+    }
+  }
+}
+
+//Button styling
+.btn {
+  margin-top: 20px;
+  padding: 1.4rem 2.5rem;
+  font-size: $paragraph;
+  color: var(--off-white);
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  border: none;
+  background-color: var(--very-dark-blue);
+  @media screen and (max-width: 600px) {
+    margin-bottom: 20px;
+    padding: 1.6rem 2.8rem;
+  }
+}
+.btn:hover {
+  background-color: var(--soft-red);
+}
+
+//Line in side-bar
+.line {
+  background-color: var(--dark-grayish-blue);
+  height: 1px;
+  width: 88%;
+  margin: auto;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+  @media screen and (max-width: 900px) {
+    margin-top: 1.2rem;
+  }
+}
