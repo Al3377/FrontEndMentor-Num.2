@@ -1,62 +1,106 @@
 //Hamburger menu
 
 .hamburger {
-  &__icon {
+  display: none;
+  @media screen and (max-width: 600px) {
     display: inline-block;
-    display: flex;
-    justify-content: center;
-    align-content: center;
-    display: none;
-    @media screen and (max-width: 600px) {
-      display: inline-block;
+
+    &__toggler {
+      display: none;
     }
-    input {
-      // display: none;
+
+    &__icon {
+      position: relative;
+
+      &,
+      &::after,
+      &::before {
+        display: inline-block;
+        width: 45px;
+        height: 2.5px;
+        background-color: var(--very-dark-blue);
+        z-index: 100;
+      }
+
+      &::before,
+      &::after {
+        content: "";
+        position: absolute;
+        left: 0;
+      }
+      &::before {
+        top: -1rem;
+      }
+
+      &::after {
+        top: 1rem;
+      }
     }
-    // Hamburger Icon lines
-    &--bar,
-    &--bar::after,
-    &--bar::before {
-      display: inline-block;
-      width: 55px;
-      height: 4.5px;
-      background-color: var(--very-dark-blue);
-      transition: all 0.5s ease-out;
-    }
-    &--bar::before {
-      content: "";
+
+    &__window {
+      background-color: var(--off-white);
+      display: none;
       position: absolute;
-      transform: translateY(-8px);
+      left: 170px;
+      top: 0;
+      width: 65vw;
+      z-index: 50;
+      a,
+      a:active {
+        color: var(--very-dark-blue);
+      }
+      ul {
+        margin-top: 16rem;
+        margin-right: 12rem;
+        height: 100vh;
+      }
+      @media screen and (max-width: 400px) {
+        position: fixed;
+        ul {
+          // margin-top: 12rem;
+          padding-bottom: 2rem;
+          margin-right: 12rem;
+          height: 100vh;
+        }
+      }
     }
-    &--bar::after {
-      content: "";
-      position: absolute;
-      transform: translateY(8px);
+    &__toggler:checked ~ &__window {
+      display: inline-block;
+      position: fixed;
     }
-  }
-
-  // Hamburger Lines when checkbox checked
-
-  &__window {
-    display: none;
-    //prozor u kome su linkovi
-    // Mora biti display:none a kad je input[type=checkbox]:checked da se promeni na display: inline-block;
-    width: 60vw;
-    max-height: 100%;
-    background-color: aqua;
-  }
-
-  &__nav {
-    display: flex;
-    justify-content: start;
-    font-size: 5rem;
-
-    a {
-      text-decoration: none;
+    &__toggler:checked + &__button {
+      position: fixed;
+      z-index: 500;
+      right: 45px;
     }
-    li {
-      list-style-type: none;
-      padding: 3rem 3rem;
+    // &__toggler:checked .grid {
+    //   display: none;
+    // }
+
+    &__toggler:checked + &__button &__icon {
+      background-color: transparent;
+      &::before {
+        top: 0;
+        transform: rotate(45deg);
+      }
+      &::after {
+        transform: rotate(-45deg);
+        top: 0;
+      }
+    }
+
+    &__nav {
+      display: flex;
+      justify-content: start;
+      font-size: 3rem;
+
+      a {
+        text-decoration: none;
+      }
+      li {
+        list-style-type: none;
+        padding: 2rem 3rem;
+      }
     }
   }
 }
@@ -70,14 +114,14 @@
   text-transform: uppercase;
   letter-spacing: 5px;
   border: none;
-  background-color: var(--very-dark-blue);
+  background-color: var(--soft-red);
   @media screen and (max-width: 600px) {
-    margin-bottom: 20px;
-    padding: 1.6rem 2.8rem;
+    margin-bottom: 15px;
+    padding: 2.2rem 3.6rem;
   }
 }
 .btn:hover {
-  background-color: var(--soft-red);
+  background-color: var(--very-dark-blue);
 }
 
 //Line in side-bar

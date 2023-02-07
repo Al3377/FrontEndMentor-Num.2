@@ -19,7 +19,7 @@
       <!--Top of the page navigation bar-->
       <header class="header grid__header ">
         <div class="header__logo">
-          <img src="images/logo.svg" alt="logo" id="logo" />
+          <img class="header__logo--small" src="images/logo.svg" alt="logo" id="logo" />
         </div>
         <nav class="header__nav">
           <ul class="nav__list hambruger">
@@ -33,14 +33,13 @@
       
         <!-- Hamburger menue, icon and the window that it opens-->
         <div class="hamburger">
-          <!-------Ikonica----------------------------------->
-          <div class="hamburger__icon">
-            <input type="checkbox" id="toggle">
-            <label  for="toggle">
-              <div class="hamburger__icon--bar"></div>
+         
+            <input class="hamburger__toggler" type="checkbox" id="toggle">
+            <label class="hamburger__button" for="toggle">
+              <span class="hamburger__icon">&nbsp;</span>
             </label>
-          </div>
-          <!-------prozor sa linkovima------------------------->
+         
+          
           <div class="hamburger__window">
             <nav class="hamburger__nav">
               <ul>

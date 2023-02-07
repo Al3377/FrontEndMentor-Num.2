@@ -163,6 +163,11 @@ body {
 .header__logo {
   margin-right: auto;
 }
+@media screen and (max-width: 600px) {
+  .header__logo--small {
+    max-width: 80%;
+  }
+}
 .header__nav {
   font-size: 1.5rem;
   font-weight: 400;
@@ -192,6 +197,11 @@ body {
   font-weight: 800;
   line-height: 58px;
   padding-top: 2rem;
+}
+@media screen and (max-width: 400px) {
+  .main__title {
+    max-width: 100%;
+  }
 }
 .main__paragraph {
   font-size: 1.5rem;
@@ -297,58 +307,114 @@ body {
   font-weight: 800;
   padding-bottom: 1rem;
 }
+.bottom__title--link:hover {
+  color: var(--soft-orange);
+}
 .bottom__p {
   font-size: 1.5rem;
   color: var(--dark-grayish-blue);
   line-height: 2.3rem;
 }
 
-.hamburger__icon {
-  display: inline-block;
-  display: flex;
-  justify-content: center;
-  align-content: center;
+.hamburger {
   display: none;
 }
 @media screen and (max-width: 600px) {
-  .hamburger__icon {
+  .hamburger {
     display: inline-block;
   }
+  .hamburger__toggler {
+    display: none;
+  }
+  .hamburger__icon {
+    position: relative;
+  }
+  .hamburger__icon, .hamburger__icon::after, .hamburger__icon::before {
+    display: inline-block;
+    width: 45px;
+    height: 2.5px;
+    background-color: var(--very-dark-blue);
+    z-index: 100;
+  }
+  .hamburger__icon::before, .hamburger__icon::after {
+    content: "";
+    position: absolute;
+    left: 0;
+  }
+  .hamburger__icon::before {
+    top: -1rem;
+  }
+  .hamburger__icon::after {
+    top: 1rem;
+  }
+  .hamburger__window {
+    background-color: var(--off-white);
+    display: none;
+    position: absolute;
+    left: 170px;
+    top: 0;
+    width: 65vw;
+    z-index: 50;
+  }
+  .hamburger__window a,
+  .hamburger__window a:active {
+    color: var(--very-dark-blue);
+  }
+  .hamburger__window ul {
+    margin-top: 16rem;
+    margin-right: 12rem;
+    height: 100vh;
+  }
 }
-.hamburger__icon--bar, .hamburger__icon--bar::after, .hamburger__icon--bar::before {
-  display: inline-block;
-  width: 55px;
-  height: 4.5px;
-  background-color: var(--very-dark-blue);
-  transition: all 0.5s ease-out;
+@media screen and (max-width: 600px) and (max-width: 400px) {
+  .hamburger__window {
+    position: fixed;
+  }
+  .hamburger__window ul {
+    padding-bottom: 2rem;
+    margin-right: 12rem;
+    height: 100vh;
+  }
 }
-.hamburger__icon--bar::before {
-  content: "";
-  position: absolute;
-  transform: translateY(-8px);
+@media screen and (max-width: 600px) {
+  .hamburger__toggler:checked ~ .hamburger__window {
+    display: inline-block;
+    position: fixed;
+  }
 }
-.hamburger__icon--bar::after {
-  content: "";
-  position: absolute;
-  transform: translateY(8px);
+@media screen and (max-width: 600px) {
+  .hamburger__toggler:checked + .hamburger__button {
+    position: fixed;
+    z-index: 500;
+    right: 45px;
+  }
 }
-.hamburger__window {
-  display: none;
-  width: 60vw;
-  max-height: 100%;
-  background-color: aqua;
+@media screen and (max-width: 600px) {
+  .hamburger__toggler:checked + .hamburger__button .hamburger__icon {
+    background-color: transparent;
+  }
+  .hamburger__toggler:checked + .hamburger__button .hamburger__icon::before {
+    top: 0;
+    transform: rotate(45deg);
+  }
+  .hamburger__toggler:checked + .hamburger__button .hamburger__icon::after {
+    transform: rotate(-45deg);
+    top: 0;
+  }
 }
-.hamburger__nav {
-  display: flex;
-  justify-content: start;
-  font-size: 5rem;
-}
-.hamburger__nav a {
-  text-decoration: none;
-}
-.hamburger__nav li {
-  list-style-type: none;
-  padding: 3rem 3rem;
+@media screen and (max-width: 600px) {
+  .hamburger__nav {
+    display: flex;
+    justify-content: start;
+    font-size: 3rem;
+  }
+  .hamburger__nav a {
+    text-decoration: none;
+  }
+  .hamburger__nav li {
+    list-style-type: none;
+    padding: 2rem 3rem;
+  }
 }
 
 .btn {
@@ -359,17 +425,17 @@ body {
   text-transform: uppercase;
   letter-spacing: 5px;
   border: none;
-  background-color: var(--very-dark-blue);
+  background-color: var(--soft-red);
 }
 @media screen and (max-width: 600px) {
   .btn {
-    margin-bottom: 20px;
-    padding: 1.6rem 2.8rem;
+    margin-bottom: 15px;
+    padding: 2.2rem 3.6rem;
   }
 }
 
 .btn:hover {
-  background-color: var(--soft-red);
+  background-color: var(--very-dark-blue);
 }
 
 .line {
