@@ -102,7 +102,7 @@
   }
 
   &__link-descr {
-    color: var(--dark-grayish-blue);
+    color: var(--grayish-blue);
     font-size: $paragraph;
     padding-top: 2rem;
     max-width: 90%;
@@ -115,13 +115,14 @@
 
 .bottom {
   &__img {
-    max-width: 28%;
-    @media screen and (max-width: 1600px) {
-      max-width: 35%;
-    }
-    @media screen and (max-width: 600px) {
-      max-width: 24%;
-    }
+    // width: 8rem;
+    height: 12.5rem;
+    // @media screen and (max-width: 1600px) {
+    //   max-width: 35%;
+    // }
+    // @media screen and (max-width: 600px) {
+    //   max-width: 24%;
+    // }
   }
   &__title {
     &--number {
@@ -140,7 +141,7 @@
       padding-bottom: 1rem;
     }
     &--link:hover {
-      color: var(--soft-orange);
+      color: var(--soft-red);
     }
   }
   &__p {

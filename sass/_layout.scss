@@ -95,7 +95,10 @@
   &__secondary {
     display: flex;
     flex-direction: column;
-    padding-left: 3rem;
+    padding-left: 2.5rem;
+    &--wide {
+      width: 24rem;
+    }
   }
   @media screen and (max-width: 600px) {
     display: flex;
